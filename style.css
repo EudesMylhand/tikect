@@ -1,0 +1,171 @@
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        .control-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 50px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        
+        .control-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        input, select {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .upload-section {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px dashed #ccc;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+        
+        .file-input {
+            display: none;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .upload-btn {
+            background-color: #4CAF50;
+        }
+        
+        .upload-btn:hover {
+            background-color: #45a049;
+        }
+        
+        .print-btn {
+            background-color: #2196F3;
+        }
+        
+        .print-btn:hover {
+            background-color: #0b7dda;
+        }
+        
+        .preview-section {
+            display: flex;
+            margin-top: 30px;
+            gap: 20px;
+        }
+        
+        .preview-controls {
+            flex: 0 0 250px;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .pages-container {
+            flex: 1;
+        }
+        
+        .page {
+            background-color: white;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .page-content {
+            padding: 1cm;
+        }
+        
+        .page-table-container {
+            overflow: hidden;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            vertical-align: middle;
+            text-align: center;
+            height: 80px;
+            font-size: 12px;
+        }
+        
+        .page-number {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* #cellHeight{
+            width: 300px;
+        } */
+        
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            .container, .container * {
+                visibility: visible;
+            }
+            .container {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+            .control-panel, .upload-section, .print-btn, .preview-controls {
+                display: none;
+            }
+            .page {
+                page-break-after: always;
+                margin: 0;
+                box-shadow: none;
+            }
+            .page:last-child {
+                page-break-after: auto;
+            }
+        }
